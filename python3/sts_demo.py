@@ -43,4 +43,4 @@ if __name__ == '__main__':
     }
     sts = Sts(config)
     response = sts.get_credential()
-    # print('get data : ' + response.content.decode("unicode-escape"))
+    print('get data : ' + response.content.decode("unicode-escape"))

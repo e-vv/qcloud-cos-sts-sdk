@@ -37,12 +37,11 @@ class Sts:
         secret_key = self.secret_key
         duration = self.duration
         real_url = self.__get_url(policy, duration, secret_id, secret_key)
-        print(real_url)
-        # try:
-        #     response = requests.get(real_url, proxies=self.proxy)
-        #     return response
-        # except urllib.request.HTTPError as e:
-        #     print ("error with : " ,e)
+        try:
+            response = requests.get(real_url, proxies=self.proxy)
+            return response
+        except urllib.request.HTTPError as e:
+            print ("error with : " ,e)
 
     def __get_url(self, policy, duration, secret_id, secret_key, name=''):
         method = 'GET'
